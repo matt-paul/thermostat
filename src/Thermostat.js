@@ -7,5 +7,10 @@ Thermostat.prototype.increaseTemp = function() {
 };
 
 Thermostat.prototype.decreaseTemp = function() {
-  this.temperature--;
+  if (this.temperature > 10) {
+    this.temperature--;
+    return this.temperature;
+  } else {
+    throw new Error('Too chilly in here');
+  };
 };

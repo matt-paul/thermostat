@@ -1,5 +1,5 @@
 describe('Thermostat', function() {
-  // var thermostat;
+  var thermostat;
 
   beforeEach(function() {
     thermostat = new Thermostat();
@@ -23,6 +23,11 @@ describe('Thermostat', function() {
     it('will decrease the temperature by one', function() {
       thermostat.decreaseTemp();
       expect(thermostat.temperature).toBe(19);
+    });
+
+    it('will not decrease temperature below 10 degrees', function() {
+      thermostat.temperature = 10;
+      expect(thermostat.decreaseTemp).toThrowError('Too chilly in here');
     });
   });
 });
