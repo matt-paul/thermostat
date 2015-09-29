@@ -1,11 +1,11 @@
 describe('Thermostat', function() {
-  var thermostat;
+  // var thermostat;
 
   beforeEach(function() {
     thermostat = new Thermostat();
   });
 
-  it('has an initial valuse of 20', function() {
+  it('has an initial value of 20', function() {
     expect(thermostat.temperature).toBe(20);
   });
 
