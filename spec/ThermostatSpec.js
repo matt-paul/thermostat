@@ -30,4 +30,12 @@ describe('Thermostat', function() {
       expect(thermostat.decreaseTemp).toThrowError('Too chilly in here');
     });
   });
+
+  describe('power saving on mode', function() {
+
+    it('will not allow the temperature to increase above 25 degrees', function() {
+      thermostat.temperature = 25;
+      expect(thermostat.increaseTemp).toThrowError('Above 25 degrees not available in power saving mode');
+    });
+  });
 });
