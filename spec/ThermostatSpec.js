@@ -47,4 +47,31 @@ describe('Thermostat', function() {
       expect(thermostat.increaseTemp).toThrowError('Above 32 degrees not possible');
     });
   });
+
+  describe('reset button', function() {
+    it('returns the temperature to 20 degrees', function() {
+      thermostat.temperature = 21;
+      thermostat.reset();
+      expect(thermostat.temperature).toBe(20);
+    });
+  });
+
+  describe('display color', function() {
+    it('is red if temperature is 25', function() {
+      thermostat.temperature = 24;
+      thermostat.increaseTemp();
+      expect(thermostat.colour).toEqual('red');
+    });
+
+    it('is green if temperature is 17', function() {
+      thermostat.temperature = 18;
+      thermostat.decreaseTemp();
+      expect(thermostat.colour).toEqual('green');
+    });
+
+    it('is yellow if temperature is 21', function() {
+      thermostat.increaseTemp();
+      expect(thermostat.colour).toEqual('yellow');
+    });
+  });
 });
