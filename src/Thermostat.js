@@ -3,12 +3,17 @@ function Thermostat() {
   this.isPowerSaving = true;
 };
 
+
+
 Thermostat.prototype.increaseTemp = function() {
-  if (this.temperature < 25) {
+  if (this.temperature < 25 && this.isPowerSaving) {
     this.temperature++;
-    return this.temperature;
-  } else {
+  } else if (this.temperature === 25 && this.isPowerSaving) {
     throw new Error('Above 25 degrees not available in power saving mode');
+  } else if (this.temperature < 32 && !this.isPowerSaving) {
+    this.temperature++;
+  } else {
+    throw new Error('Above 32 degrees not possible');
   };
 };
 
