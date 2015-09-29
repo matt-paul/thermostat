@@ -17,4 +17,12 @@ describe('Thermostat', function() {
     });
 
   });
+
+  describe('down button', function() {
+
+    it('will decrease the temperature by one', function() {
+      thermostat.decreaseTemp();
+      expect(thermostat.temperature).toBe(19);
+    });
+  });
 });
