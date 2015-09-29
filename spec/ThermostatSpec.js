@@ -9,9 +9,12 @@ describe('Thermostat', function() {
     expect(thermostat.temperature).toBe(20);
   });
 
-  describe('up button')
-    it('will increase the temperature by one', function () {
-    thermostat.increaseTemp();
-    expect(thermostat.temperature).toBe(21);
+  describe('up button', function() {
+
+    it('will increase the temperature by one', function() {
+      thermostat.increaseTemp();
+      expect(thermostat.temperature).toBe(21);
+    });
+
   });
 });
