@@ -16,7 +16,9 @@
     <body>
       <div id="container">
       <div id="front_panel">
-        <div id="display"></div>
+        <div id="display">
+          <p id="temperature"></p>
+        </div>
       <div id ="buttons">
         <button id="up" type="button">Up</button>
         <button id="down" type="button">Down</button>
@@ -24,6 +26,21 @@
       </div>
 
     </div>
+
+<script type="text/javascript">
+  var thermostat = new Thermostat();
+  $("p#temperature").text(thermostat.temperature);
+
+  // $("div#display").css("background-color", "green");
+
+  $("button#up").click(function(){
+    thermostat.increaseTemp();
+
+    $("p#temperature").text(thermostat.temperature);
+
+  });
+
+</script>
 
     </body>
 
