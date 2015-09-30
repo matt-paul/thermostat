@@ -19,9 +19,10 @@
         <div id="display">
           <p id="temperature"></p>
         </div>
-      <div id ="buttons">
+      <div id ="controls">
         <button id="up" type="button">Up</button>
         <button id="down" type="button">Down</button>
+        Power Saving Mode <input id="power-saving" type="checkbox" value="On" checked>
       </div>
       </div>
 
@@ -47,6 +48,10 @@
       $("div#display").css("background-color", thermostat.colour);
 
   })
+
+  $("div#controls :checkbox").change(function() {
+    thermostat.isPowerSaving = !thermostat.isPowerSaving
+  });
 
 </script>
 
