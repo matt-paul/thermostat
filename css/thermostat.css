@@ -1,0 +1,25 @@
+#container {
+  width: 800px;
+  height: 500px;
+}
+
+#front_panel {
+  width: 500px;
+  height: 300px;
+  border-color: black;
+  border-style: solid;
+}
+
+#display {
+  width: 350px;
+  height: 200px;
+  border-style: solid;
+  border-color: black;
+  margin-left: 75px;
+  margin-top: 30px;
+}
+
+#buttons {
+  margin-left: 235px;
+  margin-top: 20px;
+}

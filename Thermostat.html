@@ -3,14 +3,28 @@
 <head>
   <meta charset="utf-8">
   <title>Thermostat</title>
+  <script src="lib/jquery.js"></script>
   <script src="src/Thermostat.js"></script>
+  <link rel="stylesheet" href="css/thermostat.css"/>
 
-  function setUpHTMLFixture() {
-    setFixtures('<div id="my-fixture">');
-  };
+
+
+
+
 </head>
 
-<body>
-  <div id="my-fixture"></div>
-</body>
+    <body>
+      <div id="container">
+      <div id="front_panel">
+        <div id="display"></div>
+      <div id ="buttons">
+        <button id="up" type="button">Up</button>
+        <button id="down" type="button">Down</button>
+      </div>
+      </div>
+
+    </div>
+
+    </body>
+
 </html>
