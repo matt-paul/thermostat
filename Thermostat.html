@@ -30,21 +30,21 @@
 
 <script type="text/javascript">
   var thermostat = new Thermostat();
-  $("p#temperature").text(thermostat.temperature);
+    $("p#temperature").text(thermostat.temperature);
 
-  $("div#display").css("background-color", thermostat.colour);
+    $("div#display").css("background-color", thermostat.colour);
 
-  $("button#up").click(function(){
-    thermostat.increaseTemp();
+    $("button#up").click(function(){
+      thermostat.increaseTemp();
 
     $("p#temperature").text(thermostat.temperature);
       $("div#display").css("background-color", thermostat.colour);
 
   });
 
-  $("button#down").click(function(){
-    thermostat.decreaseTemp();
-    $("p#temperature").text(thermostat.temperature);
+    $("button#down").click(function(){
+      thermostat.decreaseTemp();
+      $("p#temperature").text(thermostat.temperature);
       $("div#display").css("background-color", thermostat.colour);
 
   })

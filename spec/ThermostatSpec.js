@@ -37,6 +37,14 @@ describe('Thermostat', function() {
       thermostat.temperature = 25;
       expect(function() { thermostat.increaseTemp(); }).toThrowError('Above 25 degrees not available in power saving mode');
     });
+
+
+    it('will drop to 25 degrees if above allowed temperature when turned on', function() {
+      thermostat.powerSavingToggle();
+      thermostat.temperature = 27;
+      thermostat.powerSavingToggle();
+      expect(thermostat.temperature).toEqual(25);
+    });
   });
 
   describe('power saving off mode', function() {

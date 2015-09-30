@@ -28,6 +28,13 @@ Thermostat.prototype.decreaseTemp = function() {
   this.setColour();
 };
 
+Thermostat.prototype.powerSavingToggle = function() {
+  this.isPowerSaving = !this.isPowerSaving;
+  if (this.temperature > 25) {
+    this.temperature = 25;
+  }
+};
+
 Thermostat.prototype.reset = function() {
   this.temperature = 20;
 };
