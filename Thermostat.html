@@ -18,6 +18,7 @@
       <div id="front_panel">
         <div id="display">
           <p id="temperature"></p>
+          <p id="error"></p>
         </div>
       <div id ="controls">
         <button id="up" type="button">Up</button>
@@ -35,22 +36,34 @@
     $("div#display").css("background-color", thermostat.colour);
 
     $("button#up").click(function(){
-      thermostat.increaseTemp();
 
-    $("p#temperature").text(thermostat.temperature);
-      $("div#display").css("background-color", thermostat.colour);
+      try {
+        thermostat.increaseTemp();
+        $("p#error").text("");
+      }
+      catch(err) {
+        $("p#error").text(err);
+      }
+      finally {
+        $("p#temperature").text(thermostat.temperature);
+        $("div#display").css("background-color", thermostat.colour);
+      };
 
-  });
+    });
+
 
     $("button#down").click(function(){
       thermostat.decreaseTemp();
+      $("p#error").text("");
       $("p#temperature").text(thermostat.temperature);
       $("div#display").css("background-color", thermostat.colour);
 
   })
 
   $("div#controls :checkbox").change(function() {
-    thermostat.isPowerSaving = !thermostat.isPowerSaving
+    thermostat.powerSavingToggle();
+    $("p#temperature").text(thermostat.temperature);
+    $("div#display").css("background-color", thermostat.colour);
   });
 
 </script>
