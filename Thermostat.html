@@ -53,10 +53,18 @@
 
 
     $("button#down").click(function(){
+
+      try {
       thermostat.decreaseTemp();
-      $("p#error").text("");
-      $("p#temperature").text(thermostat.temperature);
-      $("div#display").css("background-color", thermostat.colour);
+        $("p#error").text("");
+      }
+      catch(err) {
+        $("p#error").text(err);
+      }
+      finally {
+        $("p#temperature").text(thermostat.temperature);
+        $("div#display").css("background-color", thermostat.colour);
+      };
 
   })
 
