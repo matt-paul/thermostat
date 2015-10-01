@@ -14,7 +14,6 @@ Thermostat.prototype.increaseTemp = function() {
   } else {
     throw new Error('Above 32 degrees not possible');
   }
-
   this.setColour();
 };
 

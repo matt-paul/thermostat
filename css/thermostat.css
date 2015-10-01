@@ -4,6 +4,7 @@
 }
 
 #front_panel {
+  margin: auto;
   width: 500px;
   height: 300px;
   border-color: black;
@@ -20,6 +21,45 @@
 }
 
 #controls {
-  margin-left: 235px;
+  margin-left: 120px;
+  margin-right: 120px;
   margin-top: 20px;
+  border-style: groove;
+  border-color: inherit;
+  border-width: thin;
+
+}
+
+#temperature {
+  height: 100px;
+  font-family: monospace;
+  font-size: 60px;
+  font-style: normal;
+  padding-left: 150px;
+}
+
+
+#error {
+    position: absolute;
+    width: inherit;
+
+    font-family: monospace;
+    /*padding: 0px;*/
+    margin: 0px;
+    text-align: center;
+}
+
+#buttons {
+    float: left;
+}
+
+#button
+
+#power-saving {
+  margin-left: 20px;
+  float: left;
+}
+
+#test {
+  color: red;
 }

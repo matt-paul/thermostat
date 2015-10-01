@@ -3,13 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>Thermostat</title>
-  <script src="lib/jquery.js"></script>
-  <script src="src/Thermostat.js"></script>
+
   <link rel="stylesheet" href="css/thermostat.css"/>
-
-
-
-
 
 </head>
 
@@ -17,65 +12,26 @@
       <div id="container">
       <div id="front_panel">
         <div id="display">
-          <p id="temperature"></p>
           <p id="error"></p>
+          <p id="temperature"></p>
         </div>
       <div id ="controls">
+        <div id ="buttons">
         <button id="up" type="button">Up</button>
-        <button id="down" type="button">Down</button>
+        <button id="down"
+         type="button">Down</button>
+           </div>
         Power Saving Mode <input id="power-saving" type="checkbox" value="On" checked>
       </div>
       </div>
 
     </div>
 
-<script type="text/javascript">
-  var thermostat = new Thermostat();
-    $("p#temperature").text(thermostat.temperature);
-
-    $("div#display").css("background-color", thermostat.colour);
-
-    $("button#up").click(function(){
-
-      try {
-        thermostat.increaseTemp();
-        $("p#error").text("");
-      }
-      catch(err) {
-        $("p#error").text(err);
-      }
-      finally {
-        $("p#temperature").text(thermostat.temperature);
-        $("div#display").css("background-color", thermostat.colour);
-      };
-
-    });
-
-
-    $("button#down").click(function(){
-
-      try {
-      thermostat.decreaseTemp();
-        $("p#error").text("");
-      }
-      catch(err) {
-        $("p#error").text(err);
-      }
-      finally {
-        $("p#temperature").text(thermostat.temperature);
-        $("div#display").css("background-color", thermostat.colour);
-      };
-
-  })
-
-  $("div#controls :checkbox").change(function() {
-    thermostat.powerSavingToggle();
-    $("p#temperature").text(thermostat.temperature);
-    $("div#display").css("background-color", thermostat.colour);
-  });
-
-</script>
 
     </body>
+
+    <script src="lib/jquery.js"></script>
+    <script src="src/Thermostat.js"></script>
+    <script src="public/application.js"></script>
 
 </html>
